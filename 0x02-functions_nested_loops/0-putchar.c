@@ -1,12 +1,12 @@
-#include "Mercy.h"
+#include "holberton.h"
 /**
  * main - Entry point
- * Description: prints 'Mercy \n'
+ * Description: prints 'Holberton \n'
  * Return: Always 0 (success)
  */
 int main(void)
 {
-char str[] = "Mercy\n";
+char str[] = "Holberton\n";
 int i = 0;
 
 while (str[i] != '\0')
