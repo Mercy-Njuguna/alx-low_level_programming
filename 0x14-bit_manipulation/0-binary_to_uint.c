@@ -8,23 +8,25 @@
  * Return: the converted number or 0 if invalid input
  */
 
-unsigned int binary_to_uint(const char *b)
+unsigned int int binary_to_uint(const char *b)
 {
-	unsigned int num = 0;
-	int i;
+	unsigned int result = 0;
+	int w;
 
-	for (i = 0; b[i] != '\0'; i++)
+	if (b == NULL)
+		return (0);
+
+	for (w = 0; b[w] != '\0'; i++)
 	{
-		if (b[i] != '0' && b[i] != '1')
-		{
+		if (b[w] != '0' && b[w] != '1')
 			return (0);
-		}
 
-		num <<= 1;
-		num += b[i] - '0';
+		result <<= 1;
+		if (b[w] == '1')
+			result += 1;
 	}
 
-	return (num);
+	return (result);
 }
 
 
