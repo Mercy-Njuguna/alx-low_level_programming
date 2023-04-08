@@ -1,4 +1,5 @@
 #include "main.h"
+
 /**
  * get_bit - returns the value of a bit at a given index
  * @n: the number to extract the bit from
@@ -8,13 +9,12 @@
  */
 int get_bit(unsigned long int n, unsigned int index)
 {
-    const unsigned int max_index = sizeof(unsigned long int) * 8;
+	if (index >= (sizeof(unsigned long int) * 8))
+		return (-1);
 
-    if (index >= max_index)
-    {
-        return (-1);
-    }
+	if ((n & (1ul << index)) == 0)
+		return (0);
 
-    return ((n >> index) & 1);
+	return (1);
 }
 
