@@ -1,3 +1,5 @@
+#include "main.h"
+
 /**
  * print_binary - prints the binary representation of an unsigned long int
  *
