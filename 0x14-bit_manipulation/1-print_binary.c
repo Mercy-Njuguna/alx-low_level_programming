@@ -7,7 +7,6 @@
  *
  * Return: void
  */
-
 void print_binary(unsigned long int x)
 {
 	if (x > 1)
