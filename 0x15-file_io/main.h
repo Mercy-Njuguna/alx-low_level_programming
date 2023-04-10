@@ -1,5 +1,5 @@
 #ifndef MAIN_H
-#define MAIN_Hi
+#define MAIN_H
 
 #include <sys/stat.h>
 #include <fcntl.h>
