@@ -1,30 +1,26 @@
 #include "main.h"
-#include <stdlib.h>
 
-ssize_t read_textfile(const char *filename, size_t letters)
+/**
+ * binary_to_uint - converts a binary number to unsigned int
+ * @b: string containing the binary number
+ *
+ * Return: the converted number
+ */
+unsigned int binary_to_uint(const char *b)
 {
-    ssize_t o, r, w;
-    char *buffer;
+	int i;
+	unsigned int dec_val = 0;
 
-    if (!filename)
-        return (0);
+	if (!b)
+		return (0);
 
-    buffer = malloc(sizeof(char) * letters);
-    if (!buffer)
-        return (0);
+	for (i = 0; b[i]; i++)
+	{
+		if (b[i] < '0' || b[i] > '1')
+			return (0);
+		dec_val = 2 * dec_val + (b[i] - '0');
+	}
 
-    o = open(filename, O_RDONLY);
-    r = read(o, buffer, letters);
-    w = write(STDOUT_FILENO, buffer, r);
-
-    if (o == -1 || r == -1 || w == -1 || w != r)
-    {
-        free(buffer);
-        return (0);
-    }
-
-    free(buffer);
-    close(o);
-
-    return (w);
+	return (dec_val);
 }
+
